@@ -1,0 +1,6 @@
+/target/
+/test-output/
+/.settings/
+/.classpath
+/.project
+sh.exe.stackdump
