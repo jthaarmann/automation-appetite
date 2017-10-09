@@ -20,4 +20,9 @@ public class ExercisePageObject {
 		return WebDriverUtil.findText(ExercisePageElements.DAILY_SUMMARY_PANEL_HEADING);
 	}
 
+	public ExercisesByTypePageObject getExercisesByTypePanel() {
+		WebDriverUtil.findText(ExercisePageElements.EXERCISES_PANEL_HEADING);
+		return new ExercisesByTypePageObject();
+	}
+
 }
