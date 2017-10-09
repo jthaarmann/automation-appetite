@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.3.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<groupId>com.jth.example</groupId>
+	<artifactId>dashboard</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>Dashboard</name>
+
+	<properties>
+		<build.timestamp>${maven.build.timestamp}</build.timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.9.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jmockit</groupId>
+			<artifactId>jmockit</artifactId>
+			<version>1.13</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>com.springsource.org.apache.commons.lang</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>4.3.7.RELEASE</version>
+		</dependency>
+	</dependencies>
+	
+	<profiles>
+		<profile>
+			<id>eclipse-build</id>
+			<activation>
+				<property>
+					<name>m2e.version</name>
+				</property>
+			</activation>
+			<properties>
+				<build.timestamp>local</build.timestamp>
+				<BUILD_NUMBER>local</BUILD_NUMBER>
+			</properties>
+		</profile>
+	</profiles>
+	
+	<build>
+	    <plugins>
+	        <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <configuration>
+		            <source>1.8</source>
+		            <target>1.8</target>
+		        </configuration>
+	    	</plugin>
+	    </plugins>
+	</build>
+
+</project>

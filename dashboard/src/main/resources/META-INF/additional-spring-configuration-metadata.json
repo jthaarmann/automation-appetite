@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "rest.proxy.target.base.url",
+  "type": "java.lang.String",
+  "description": "base url for rest services'"
+}]}
